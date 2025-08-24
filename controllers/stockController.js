@@ -1,13 +1,12 @@
 let stockController = {
-    index: function (req, res) {
-        res.send('Stock page');
+    index: function(req, res){
+        let stockList = ['producto 1', 'producto 2', 'producto 3', 'producto 4'];
+        return res.render('stocks', { title: 'Stocks', listaStock: stockList});
     },
     show: function (req, res) {
         res.send(`hola  ${req.params.id}`);
     },
-    showComments: function (req, res) {
-        res.send(` + ${req.params.id} +  comentarios:  ${req.params.id}  adsdsafsasadf   ${req.params.commentsId}`);
-    },
+
     create: function (req, res) {
         res.send('Crear un nuevo elemento en stock');
     }
